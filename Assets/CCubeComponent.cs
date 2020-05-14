@@ -13,15 +13,17 @@ public class CCubeComponent : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        StartCoroutine("Generate");
+        Generate();
     }
 
-    private IEnumerator Generate()
+    private void Generate()
     {
         GetComponent<MeshFilter>().mesh = mesh = new Mesh();
         mesh.name = "Procedural Cube";
-        WaitForSeconds wait = new WaitForSeconds(0.00001f);
+        CreateVertices();    }
 
+    private void CreateVertices()
+    {
         int cornerVertices = 8;
         int edgeVertices = (xSize + ySize + zSize - 3) * 4;
         int faceVertices = (
@@ -37,23 +39,18 @@ public class CCubeComponent : MonoBehaviour
             for (int x = 0; x <= xSize; x++)
             {
                 vertices[v++] = new Vector3(x, y, 0);
-                yield return wait;
             }
-
             for (int z = 1; z <= zSize; z++)
             {
                 vertices[v++] = new Vector3(xSize, y, z);
-                yield return wait;
             }
             for (int x = xSize - 1; x >= 0; x--)
             {
                 vertices[v++] = new Vector3(x, y, zSize);
-                yield return wait;
             }
             for (int z = zSize - 1; z > 0; z--)
             {
                 vertices[v++] = new Vector3(0, y, z);
-                yield return wait;
             }
         }
         for (int z = 1; z < zSize; z++)
@@ -61,7 +58,6 @@ public class CCubeComponent : MonoBehaviour
             for (int x = 1; x < xSize; x++)
             {
                 vertices[v++] = new Vector3(x, ySize, z);
-                yield return wait;
             }
         }
         for (int z = 1; z < zSize; z++)
@@ -69,7 +65,6 @@ public class CCubeComponent : MonoBehaviour
             for (int x = 1; x < xSize; x++)
             {
                 vertices[v++] = new Vector3(x, 0, z);
-                yield return wait;
             }
         }
     }
