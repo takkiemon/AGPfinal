@@ -56,6 +56,22 @@ public class CCubeComponent : MonoBehaviour
                 yield return wait;
             }
         }
+        for (int z = 1; z < zSize; z++)
+        {
+            for (int x = 1; x < xSize; x++)
+            {
+                vertices[v++] = new Vector3(x, ySize, z);
+                yield return wait;
+            }
+        }
+        for (int z = 1; z < zSize; z++)
+        {
+            for (int x = 1; x < xSize; x++)
+            {
+                vertices[v++] = new Vector3(x, 0, z);
+                yield return wait;
+            }
+        }
     }
 
     private void OnDrawGizmos()
