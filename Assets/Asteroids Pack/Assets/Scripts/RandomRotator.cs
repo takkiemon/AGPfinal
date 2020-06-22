@@ -5,9 +5,16 @@ public class RandomRotator : MonoBehaviour
 {
     [SerializeField]
     private float tumble;
+    private Vector3 currentUnitsphere;
 
     void Start()
     {
-        GetComponent<Rigidbody>().angularVelocity = Random.insideUnitSphere * tumble;
+        currentUnitsphere = Random.insideUnitSphere;
+        GetComponent<Rigidbody>().angularVelocity = currentUnitsphere * tumble;
+    }
+
+    private void Update()
+    {
+        GetComponent<Rigidbody>().angularVelocity = currentUnitsphere * tumble;
     }
 }
