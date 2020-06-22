@@ -8,6 +8,8 @@ public class CCubeComponent : MonoBehaviour
     public int xSize, ySize, zSize;
     public int roundness;
 
+    public SceneManager sceneManager;
+
     private Mesh mesh;
     private Vector3[] vertices;
     private Vector3[] normals;
@@ -15,7 +17,12 @@ public class CCubeComponent : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Generate();
+    }
+
+    private void Start()
+    {
+        Generate(); // misschien moet het in Start()
+        sceneManager.mesh = mesh;
     }
 
     private void Generate()
