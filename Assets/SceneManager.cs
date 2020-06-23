@@ -10,7 +10,11 @@ public class SceneManager : MonoBehaviour
     [SerializeField]public AsteroidCube[] asteroids;
     private List<Matrix4x4[]> matrixArrayList = new List<Matrix4x4[]>(); // each array has a maximum of 1023 matrices
     private Matrix4x4[] asteroidMatrix;
-    public GameObject cameraObject;
+    public GameObject planet;
+    public float planetSize;
+    public float beltDistanceToPlanet;
+    public Vector3 beltSpeed;
+    public int infiniteCounter;
 
     public Material mat;
     public Mesh mesh;
@@ -18,6 +22,7 @@ public class SceneManager : MonoBehaviour
     //helpvariables
     public float range;
     public Vector3 minRange, maxRange, minSizeAstr, maxSizeAstr;
+    public Vector3 tempPosition;
     public float minRotSpd, maxRotSpd;
 
     [System.Serializable]
@@ -32,6 +37,7 @@ public class SceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        planet.transform.localScale = new Vector3(planetSize, planetSize, planetSize);
         InitAsteroids();
         initMatrixArrayList();
     }
@@ -83,9 +89,11 @@ public class SceneManager : MonoBehaviour
     public void InitAsteroids()
     {
         asteroids = new AsteroidCube[numberOfAsteroids];
+        range = range * Mathf.Sqrt((float)numberOfAsteroids) + Mathf.Sqrt(.5f) * planetSize /* * .5f */+ Mathf.Sqrt(.5f) * beltDistanceToPlanet;
+        minRange = new Vector3(planet.transform.position.x - range, planet.transform.position.y - range, planet.transform.position.z - range);
+        maxRange = new Vector3(planet.transform.position.x + range, planet.transform.position.y + range, planet.transform.position.z + range);
 
-        minRange = new Vector3(cameraObject.transform.position.x - range * Mathf.Sqrt((float)numberOfAsteroids), cameraObject.transform.position.y - range * Mathf.Sqrt((float)numberOfAsteroids), cameraObject.transform.position.z - range * Mathf.Sqrt((float)numberOfAsteroids));
-        maxRange = new Vector3(cameraObject.transform.position.x + range * Mathf.Sqrt((float)numberOfAsteroids), cameraObject.transform.position.y + range * Mathf.Sqrt((float)numberOfAsteroids), cameraObject.transform.position.z + range * Mathf.Sqrt((float)numberOfAsteroids));
+        //length of x and y of range must be at least radius of planet
 
         for (int i = 0; i < numberOfAsteroids; i++)
         {
@@ -97,7 +105,18 @@ public class SceneManager : MonoBehaviour
                 Random.Range(minRotSpd, maxRotSpd),
                 Random.Range(minRotSpd, maxRotSpd)
                 );
-            asteroids[i].position = new Vector3(Random.Range(minRange.x, maxRange.x), 0f, Random.Range(minRange.z, maxRange.z));
+            infiniteCounter = 0;
+            do
+            {
+                tempPosition = new Vector3(Random.Range(minRange.x, maxRange.x), 0f, Random.Range(minRange.z, maxRange.z));
+                infiniteCounter++;
+                if (infiniteCounter >= 200)
+                {
+                    Debug.Log("infinite? counter: " + infiniteCounter);
+                }
+                Debug.Log(tempPosition);
+            } while (tempPosition.magnitude <= planetSize * .5f + beltDistanceToPlanet && infiniteCounter < 200);
+            asteroids[i].position = tempPosition;
         }
     }
 
@@ -110,7 +129,7 @@ public class SceneManager : MonoBehaviour
                 asteroids[i].rotationVelocity.y * Time.deltaTime, 
                 asteroids[i].rotationVelocity.z * Time.deltaTime
                 );
-            //asteroids[i].position = new Vector3(Random.Range(minRange.x, maxRange.x), 0f, Random.Range(minRange.z, maxRange.z));
+            asteroids[i].position = RotatePointAroundPivot(asteroids[i].position, planet.transform.position, beltSpeed);
         }
     }
 
@@ -122,5 +141,10 @@ public class SceneManager : MonoBehaviour
         {
             Graphics.DrawMeshInstanced(mesh, 0, mat, matrixArray, matrixArray.Length, block, UnityEngine.Rendering.ShadowCastingMode.Off);
         }
+    }
+
+    public Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles)
+    {
+        return Quaternion.Euler(angles) * (point - pivot) + pivot;
     }
 }
