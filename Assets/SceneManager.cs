@@ -15,8 +15,6 @@ public class SceneManager : MonoBehaviour
     public Material mat;
     public Mesh mesh;
 
-    public int counter = 0;
-
     //helpvariables
     public float range;
     public Vector3 minRange, maxRange, minSizeAstr, maxSizeAstr;
@@ -27,7 +25,7 @@ public class SceneManager : MonoBehaviour
     {
         public Vector3 position;
         public Quaternion rotation;
-        public Quaternion rotationVelocity;
+        public Vector3 rotationVelocity;
         public Vector3 dimensions;
     }
 
@@ -94,10 +92,9 @@ public class SceneManager : MonoBehaviour
             asteroids[i] = new AsteroidCube();
             asteroids[i].dimensions = new Vector3(Random.Range(minSizeAstr.x, maxSizeAstr.x), Random.Range(minSizeAstr.y, maxSizeAstr.y), Random.Range(minSizeAstr.z, maxSizeAstr.z));
             asteroids[i].rotation = Random.rotation;
-            asteroids[i].rotationVelocity = new Quaternion(
+            asteroids[i].rotationVelocity = new Vector3(
                 Random.Range(minRotSpd, maxRotSpd), 
                 Random.Range(minRotSpd, maxRotSpd),
-                Random.Range(minRotSpd, maxRotSpd), 
                 Random.Range(minRotSpd, maxRotSpd)
                 );
             asteroids[i].position = new Vector3(Random.Range(minRange.x, maxRange.x), 0f, Random.Range(minRange.z, maxRange.z));
@@ -108,11 +105,10 @@ public class SceneManager : MonoBehaviour
     {
         for (int i = 0; i < numberOfAsteroids; i++)
         {
-            asteroids[i].rotation.Set(
-                asteroids[i].rotation.x + asteroids[i].rotationVelocity.x * Time.deltaTime, 
-                asteroids[i].rotation.y + asteroids[i].rotationVelocity.y * Time.deltaTime, 
-                asteroids[i].rotation.z + asteroids[i].rotationVelocity.z * Time.deltaTime,
-                asteroids[i].rotation.w + asteroids[i].rotationVelocity.w * Time.deltaTime
+            asteroids[i].rotation.eulerAngles = new Vector3(
+                asteroids[i].rotationVelocity.x * Time.deltaTime, 
+                asteroids[i].rotationVelocity.y * Time.deltaTime, 
+                asteroids[i].rotationVelocity.z * Time.deltaTime
                 );
             //asteroids[i].position = new Vector3(Random.Range(minRange.x, maxRange.x), 0f, Random.Range(minRange.z, maxRange.z));
         }
