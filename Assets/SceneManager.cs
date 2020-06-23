@@ -105,7 +105,7 @@ public class SceneManager : MonoBehaviour
     {
         for (int i = 0; i < numberOfAsteroids; i++)
         {
-            asteroids[i].rotation.eulerAngles = new Vector3(
+            asteroids[i].rotation.eulerAngles += new Vector3(
                 asteroids[i].rotationVelocity.x * Time.deltaTime, 
                 asteroids[i].rotationVelocity.y * Time.deltaTime, 
                 asteroids[i].rotationVelocity.z * Time.deltaTime
@@ -120,7 +120,6 @@ public class SceneManager : MonoBehaviour
 
         foreach (Matrix4x4[] matrixArray in matrixArrayList)
         {
-            Debug.Log(matrixArray.Length);
             Graphics.DrawMeshInstanced(mesh, 0, mat, matrixArray, matrixArray.Length, block, UnityEngine.Rendering.ShadowCastingMode.Off);
         }
     }

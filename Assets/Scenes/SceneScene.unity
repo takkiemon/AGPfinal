@@ -248,8 +248,8 @@ Camera:
   m_GameObject: {fileID: 828074675}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 0}
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.8745099, g: 0.8745099, b: 0.8745099, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72ced22f3f42984898aed49eb224cd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfAsteroids: 50
+  numberOfAsteroids: 400
   asteroids: []
   cameraObject: {fileID: 828074675}
   mat: {fileID: 2100000, guid: 1658e044206e94d608145419d1317859, type: 2}
@@ -333,6 +333,10 @@ MonoBehaviour:
   range: 10
   minRange: {x: 0, y: 0, z: 0}
   maxRange: {x: 0, y: 0, z: 0}
+  minSizeAstr: {x: 1.2, y: 1.2, z: 1.2}
+  maxSizeAstr: {x: 2.5, y: 2.5, z: 2.5}
+  minRotSpd: -50
+  maxRotSpd: 50
 --- !u!4 &868660131
 Transform:
   m_ObjectHideFlags: 0
