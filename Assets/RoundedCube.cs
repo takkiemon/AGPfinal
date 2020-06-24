@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-public class CCubeComponent : MonoBehaviour
+public class RoundedCube : MonoBehaviour
 {
     public int xSize, ySize, zSize;
     public int roundness;
@@ -85,7 +85,19 @@ public class CCubeComponent : MonoBehaviour
 
     private void SetVertex(int i, int x, int y, int z)
     {
-        vertices[i] = new Vector3(x, y, z);
+        Vector3 inner = new Vector3(x, y, z);
+
+        if (x < roundness)
+        {
+            inner.x = roundness;
+        }
+        else if (x > xSize - roundness)
+        {
+            inner.x = xSize - roundness;
+        }
+
+        normals[i] = (vertices[i] - inner).normalized;
+        vertices[i] = inner + normals[i] * roundness;
     }
 
     private void CreateTriangles()
