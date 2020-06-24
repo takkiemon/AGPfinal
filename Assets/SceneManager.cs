@@ -12,7 +12,7 @@ public class SceneManager : MonoBehaviour
     private Matrix4x4[] asteroidMatrix;
     public GameObject planet;
     public float planetSize;
-    public float beltDistanceToPlanet;
+    public Vector2 beltDistanceToPlanet;
     public Vector3 beltSpeed;
     public int infiniteCounter;
 
@@ -89,9 +89,9 @@ public class SceneManager : MonoBehaviour
     public void InitAsteroids()
     {
         asteroids = new AsteroidCube[numberOfAsteroids];
-        range = range * Mathf.Sqrt((float)numberOfAsteroids) + Mathf.Sqrt(.5f) * planetSize /* * .5f */+ Mathf.Sqrt(.5f) * beltDistanceToPlanet;
-        minRange = new Vector3(planet.transform.position.x - range, planet.transform.position.y - range, planet.transform.position.z - range);
-        maxRange = new Vector3(planet.transform.position.x + range, planet.transform.position.y + range, planet.transform.position.z + range);
+        range = range * Mathf.Sqrt((float)numberOfAsteroids) + Mathf.Sqrt(.5f) * planetSize /* * .5f */+ Mathf.Sqrt(.5f) * beltDistanceToPlanet.x;
+        minRange = new Vector3(planet.transform.position.x - range, (planet.transform.position.y - range) * beltDistanceToPlanet.y, planet.transform.position.z - range);
+        maxRange = new Vector3(planet.transform.position.x + range, (planet.transform.position.y + range) * beltDistanceToPlanet.y, planet.transform.position.z + range);
 
         //length of x and y of range must be at least radius of planet
 
@@ -108,14 +108,14 @@ public class SceneManager : MonoBehaviour
             infiniteCounter = 0;
             do
             {
-                tempPosition = new Vector3(Random.Range(minRange.x, maxRange.x), 0f, Random.Range(minRange.z, maxRange.z));
+                tempPosition = new Vector3(Random.Range(minRange.x, maxRange.x), Random.Range(minRange.y, maxRange.y), Random.Range(minRange.z, maxRange.z));
                 infiniteCounter++;
                 if (infiniteCounter >= 200)
                 {
                     Debug.Log("infinite? counter: " + infiniteCounter);
                 }
                 Debug.Log(tempPosition);
-            } while (tempPosition.magnitude <= planetSize * .5f + beltDistanceToPlanet && infiniteCounter < 200);
+            } while (tempPosition.magnitude <= planetSize * .5f + beltDistanceToPlanet.x && infiniteCounter < 200);
             asteroids[i].position = tempPosition;
         }
     }
