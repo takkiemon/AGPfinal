@@ -120,11 +120,7 @@ public class SceneManager : MonoBehaviour
     {
         for (int i = 0; i < numberOfAsteroids; i++)
         {
-            asteroids[i].rotation.eulerAngles += new Vector3(
-                asteroids[i].rotationVelocity.x * Time.deltaTime, 
-                asteroids[i].rotationVelocity.y * Time.deltaTime, 
-                asteroids[i].rotationVelocity.z * Time.deltaTime
-                );
+            asteroids[i].rotation.eulerAngles += asteroids[i].rotationVelocity * Time.deltaTime;
             asteroids[i].position = RotatePointAroundPivot(asteroids[i].position, planet.transform.position, beltSpeed);
         }
     }

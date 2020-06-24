@@ -325,24 +325,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72ced22f3f42984898aed49eb224cd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfAsteroids: 200
+  numberOfAsteroids: 40
   asteroids: []
   planet: {fileID: 1858083200}
-  planetSize: 30
+  planetSize: 500
   beltDistanceToPlanet: {x: 0, y: 0}
-  beltRange: {x: 0.05, y: 1, z: 1}
+  beltRange: {x: 0.01, y: 1, z: 1}
   beltHeight: 0
-  minBeltDistance: 50
-  maxBeltDistance: 100
-  beltSpeed: {x: 0, y: 0.2, z: 0}
+  minBeltDistance: 300
+  maxBeltDistance: 500
+  beltSpeed: {x: 0, y: 0.03, z: 0}
   infiniteCounter: 0
   mat: {fileID: 2100000, guid: 1658e044206e94d608145419d1317859, type: 2}
   mesh: {fileID: 0}
   range: 5
   minRange: {x: 0, y: 0, z: 0}
   maxRange: {x: 0, y: 0, z: 0}
-  minSizeAstr: {x: 1.2, y: 1.2, z: 1.2}
-  maxSizeAstr: {x: 2.5, y: 2.5, z: 2.5}
+  minSizeAstr: {x: 0.5, y: 0.5, z: 0.5}
+  maxSizeAstr: {x: 1.5, y: 1.5, z: 1.5}
   tempPosition: {x: 0, y: 0, z: 0}
   tempAngle: {x: 0, y: 0, z: 0}
   minRotSpd: -50
