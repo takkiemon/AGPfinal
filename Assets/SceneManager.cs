@@ -13,6 +13,10 @@ public class SceneManager : MonoBehaviour
     public GameObject planet;
     public float planetSize;
     public Vector2 beltDistanceToPlanet;
+    public Vector3 beltRange;
+    public float beltHeight;
+    public float minBeltDistance;
+    public float maxBeltDistance;
     public Vector3 beltSpeed;
     public int infiniteCounter;
 
@@ -23,7 +27,9 @@ public class SceneManager : MonoBehaviour
     public float range;
     public Vector3 minRange, maxRange, minSizeAstr, maxSizeAstr;
     public Vector3 tempPosition;
+    public Vector3 tempAngle;
     public float minRotSpd, maxRotSpd;
+    public float tempFloat;
 
     [System.Serializable]
     public struct AsteroidCube
@@ -90,10 +96,8 @@ public class SceneManager : MonoBehaviour
     {
         asteroids = new AsteroidCube[numberOfAsteroids];
         range = range * Mathf.Sqrt((float)numberOfAsteroids) + Mathf.Sqrt(.5f) * planetSize /* * .5f */+ Mathf.Sqrt(.5f) * beltDistanceToPlanet.x;
-        minRange = new Vector3(planet.transform.position.x - range, (planet.transform.position.y - range) * beltDistanceToPlanet.y, planet.transform.position.z - range);
+        minRange = new Vector3(planet.transform.position.x - range, (planet.transform.position.y - range) * beltHeight, planet.transform.position.z - range);
         maxRange = new Vector3(planet.transform.position.x + range, (planet.transform.position.y + range) * beltDistanceToPlanet.y, planet.transform.position.z + range);
-
-        //length of x and y of range must be at least radius of planet
 
         for (int i = 0; i < numberOfAsteroids; i++)
         {
@@ -101,22 +105,14 @@ public class SceneManager : MonoBehaviour
             asteroids[i].dimensions = new Vector3(Random.Range(minSizeAstr.x, maxSizeAstr.x), Random.Range(minSizeAstr.y, maxSizeAstr.y), Random.Range(minSizeAstr.z, maxSizeAstr.z));
             asteroids[i].rotation = Random.rotation;
             asteroids[i].rotationVelocity = new Vector3(
-                Random.Range(minRotSpd, maxRotSpd), 
+                Random.Range(minRotSpd, maxRotSpd),
                 Random.Range(minRotSpd, maxRotSpd),
                 Random.Range(minRotSpd, maxRotSpd)
-                );
-            infiniteCounter = 0;
-            do
-            {
-                tempPosition = new Vector3(Random.Range(minRange.x, maxRange.x), Random.Range(minRange.y, maxRange.y), Random.Range(minRange.z, maxRange.z));
-                infiniteCounter++;
-                if (infiniteCounter >= 200)
-                {
-                    Debug.Log("infinite? counter: " + infiniteCounter);
-                }
-                Debug.Log(tempPosition);
-            } while (tempPosition.magnitude <= planetSize * .5f + beltDistanceToPlanet.x && infiniteCounter < 200);
-            asteroids[i].position = tempPosition;
+            );
+
+            tempPosition = new Vector3(0, 0, Random.Range(minBeltDistance, maxBeltDistance));
+            tempAngle = new Vector3(Random.Range(-180f * beltRange.x, 180f * beltRange.x), Random.Range(-180f * beltRange.y, 180f * beltRange.y), Random.Range(-180f * beltRange.z, 180f * beltRange.z));
+            asteroids[i].position = RotatePointAroundPivot(tempPosition, planet.transform.position, tempAngle);
         }
     }
 
