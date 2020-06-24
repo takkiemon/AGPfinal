@@ -336,7 +336,7 @@ MonoBehaviour:
   maxBeltDistance: 500
   beltSpeed: {x: 0, y: 0.03, z: 0}
   infiniteCounter: 0
-  mat: {fileID: 2100000, guid: 1658e044206e94d608145419d1317859, type: 2}
+  mat: {fileID: 2100000, guid: 12db531d9ec52d8478b6f1aba8f672bb, type: 2}
   mesh: {fileID: 0}
   range: 5
   minRange: {x: 0, y: 0, z: 0}
@@ -402,13 +402,13 @@ PrefabInstance:
     - target: {fileID: 7748145444235971205, guid: 0872f709712797641959947ee7a1b755,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7748145444235971205, guid: 0872f709712797641959947ee7a1b755,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 1658e044206e94d608145419d1317859, type: 2}
+      objectReference: {fileID: 2100000, guid: 735872f1a88c9a24a9e956019f92c5cc, type: 2}
     - target: {fileID: 7748145444235971205, guid: 0872f709712797641959947ee7a1b755,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
@@ -418,7 +418,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 70cf9c5320e92564b892882f4768232a, type: 2}
+      objectReference: {fileID: 2100000, guid: 12db531d9ec52d8478b6f1aba8f672bb, type: 2}
     - target: {fileID: 7748145444235971207, guid: 0872f709712797641959947ee7a1b755,
         type: 3}
       propertyPath: m_LocalPosition.x
