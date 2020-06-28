@@ -338,8 +338,8 @@ MonoBehaviour:
   infiniteCounter: 0
   mat:
   - {fileID: 2100000, guid: 367f42d8f3390454d9a8355d8bf0c8df, type: 2}
-  - {fileID: 2100000, guid: 367f42d8f3390454d9a8355d8bf0c8df, type: 2}
-  - {fileID: 2100000, guid: 367f42d8f3390454d9a8355d8bf0c8df, type: 2}
+  - {fileID: 2100000, guid: eeebe789604ad6d4ea291603832502b8, type: 2}
+  - {fileID: 2100000, guid: 4c16d5e56de2fa54f85687a9eac871f4, type: 2}
   mesh: {fileID: 0}
   range: 5
   minRange: {x: 0, y: 0, z: 0}
