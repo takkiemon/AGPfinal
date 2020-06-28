@@ -20,7 +20,7 @@ public class SceneManager : MonoBehaviour
     public Vector3 beltSpeed;
     public int infiniteCounter;
 
-    public Material mat;
+    public Material[] mat;
     public Mesh mesh;
 
     //helpvariables
@@ -131,7 +131,10 @@ public class SceneManager : MonoBehaviour
 
         foreach (Matrix4x4[] matrixArray in matrixArrayList)
         {
-            Graphics.DrawMeshInstanced(mesh, 0, mat, matrixArray, matrixArray.Length, block, UnityEngine.Rendering.ShadowCastingMode.Off);
+            for (int i = 0; i < mesh.subMeshCount; i++)
+            {
+                Graphics.DrawMeshInstanced(mesh, i, mat[i], matrixArray, matrixArray.Length, block, UnityEngine.Rendering.ShadowCastingMode.Off);
+            }
         }
     }
 

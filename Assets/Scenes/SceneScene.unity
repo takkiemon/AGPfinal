@@ -336,7 +336,10 @@ MonoBehaviour:
   maxBeltDistance: 500
   beltSpeed: {x: 0, y: 0.03, z: 0}
   infiniteCounter: 0
-  mat: {fileID: 2100000, guid: 1658e044206e94d608145419d1317859, type: 2}
+  mat:
+  - {fileID: 2100000, guid: 735872f1a88c9a24a9e956019f92c5cc, type: 2}
+  - {fileID: 2100000, guid: 70cf9c5320e92564b892882f4768232a, type: 2}
+  - {fileID: 2100000, guid: 2d7df76fa1d1ba84891e265ec4af01c9, type: 2}
   mesh: {fileID: 0}
   range: 5
   minRange: {x: 0, y: 0, z: 0}
