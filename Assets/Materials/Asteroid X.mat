@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AsteroidTest001 X
+  m_Name: Asteroid X
   m_Shader: {fileID: 4800000, guid: fa27c602f8e11244e9758f812b0ebb58, type: 3}
   m_ShaderKeywords: _FACES_X
   m_LightmapFlags: 4
@@ -20,8 +20,8 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: adba54bb55d9b441cb47d7245e3ecab0, type: 3}
+        m_Scale: {x: 2, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}

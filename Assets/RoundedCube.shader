@@ -4,6 +4,7 @@
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_Metallic ("Metallic", Range(0,1)) = 0.0
+		_BumpMap ("Bumpmap", 2D) = "bump" {}
 		[KeywordEnum(X, Y, Z)] _Faces ("Faces", Float) = 0
 	}
 	SubShader {
@@ -16,9 +17,11 @@
 		#pragma target 3.0
 
 		sampler2D _MainTex;
+		sampler2D _BumpMap;
 
 		struct Input {
 			float2 cubeUV;
+			float2 uv_BumpMap;
 		};
 
 		half _Glossiness;
@@ -35,13 +38,14 @@
 				o.cubeUV = v.color.xy * 255;
 			#endif
 		}
-
+		
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			fixed4 c = tex2D(_MainTex, IN.cubeUV) * _Color;
 			o.Albedo = c.rgb;
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
 			o.Alpha = c.a;
+			o.Normal = UnpackNormal (tex2D (_BumpMap, IN.uv_BumpMap));
 		}
 		ENDCG
 	} 
