@@ -261,7 +261,7 @@ SphereCollider:
   m_GameObject: {fileID: 510951789}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -867,6 +867,26 @@ MonoBehaviour:
   clouds: {fileID: 510951789}
   planetRotationSpeed: -2.3
   cloudRotationSpeed: 1
+--- !u!1 &2023702240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6060827435976374144, guid: 0146b2764f75d69409022c0464bb6572,
+    type: 3}
+  m_PrefabInstance: {fileID: 1308189385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2023702245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023702240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0ea691a82843742a2b6ad0bb630e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iterations: 0
+  bloomShader: {fileID: 4800000, guid: a72ebefdea820214881b54291362f9f7, type: 3}
 --- !u!1001 &6944534220568529619
 PrefabInstance:
   m_ObjectHideFlags: 0
