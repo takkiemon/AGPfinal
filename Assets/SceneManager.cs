@@ -12,6 +12,7 @@ public class SceneManager : MonoBehaviour
     private Matrix4x4[] asteroidMatrix;
     public GameObject planet;
     public float planetSize;
+    public GameObject spaceShip;
     public Vector2 beltDistanceToPlanet;
     public Vector3 beltRange;
     public float beltHeight;
@@ -49,6 +50,7 @@ public class SceneManager : MonoBehaviour
         tempPosition2 = new Vector3(0, 0, 0);
         planet.transform.localScale = new Vector3(planetSize, planetSize, planetSize);
         planet.transform.rotation = Quaternion.Euler(planetTilt);
+        spaceShip.transform.position = new Vector3(0, 0, -(maxBeltDistance + 40f));
         InitAsteroids();
         initMatrixArrayList();
     }
