@@ -18,7 +18,8 @@ public class SceneManager : MonoBehaviour
     public float minBeltDistance;
     public float maxBeltDistance;
     public Vector3 beltSpeed;
-    public int infiniteCounter;
+    public Vector3 beltTilt;
+    public Vector3 planetTilt;
 
     public Material[] mat;
     public Mesh mesh;
@@ -27,6 +28,7 @@ public class SceneManager : MonoBehaviour
     public float range;
     public Vector3 minRange, maxRange, minSizeAstr, maxSizeAstr;
     public Vector3 tempPosition;
+    public Vector3 tempPosition2;
     public Vector3 tempAngle;
     public float minRotSpd, maxRotSpd;
     public float tempFloat;
@@ -43,7 +45,10 @@ public class SceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tempPosition = new Vector3(0, 0, 0);
+        tempPosition2 = new Vector3(0, 0, 0);
         planet.transform.localScale = new Vector3(planetSize, planetSize, planetSize);
+        planet.transform.rotation = Quaternion.Euler(planetTilt);
         InitAsteroids();
         initMatrixArrayList();
     }
@@ -113,6 +118,9 @@ public class SceneManager : MonoBehaviour
             tempPosition = new Vector3(0, 0, Random.Range(minBeltDistance, maxBeltDistance));
             tempAngle = new Vector3(Random.Range(-180f * beltRange.x, 180f * beltRange.x), Random.Range(-180f * beltRange.y, 180f * beltRange.y), Random.Range(-180f * beltRange.z, 180f * beltRange.z));
             asteroids[i].position = RotatePointAroundPivot(tempPosition, planet.transform.position, tempAngle);
+            //tempPosition2 = new Vector3(asteroids[i].position.x * beltTilt.x, asteroids[i].position.y * beltTilt.y, asteroids[i].position.z * beltTilt.z);
+            //tempPosition2 = new Vector3(0, 0, asteroids[i].position.z);
+            //asteroids[i].position = RotatePointAroundPivot(tempPosition, tempPosition2, beltTilt);
         }
     }
 
@@ -121,7 +129,7 @@ public class SceneManager : MonoBehaviour
         for (int i = 0; i < numberOfAsteroids; i++)
         {
             asteroids[i].rotation.eulerAngles += asteroids[i].rotationVelocity * Time.deltaTime;
-            asteroids[i].position = RotatePointAroundPivot(asteroids[i].position, planet.transform.position, beltSpeed);
+            asteroids[i].position = RotatePointAroundPivot(asteroids[i].position, planet.transform.position, beltSpeed * Time.deltaTime);
         }
     }
 
