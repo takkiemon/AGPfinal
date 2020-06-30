@@ -880,13 +880,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023702240}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d0ea691a82843742a2b6ad0bb630e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iterations: 0
+  iterations: 1
   bloomShader: {fileID: 4800000, guid: a72ebefdea820214881b54291362f9f7, type: 3}
+--- !u!114 &2023702246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023702240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c9ebc214b0141c6a6ecf1e7443f3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloomShader: {fileID: 4800000, guid: 926e8db920ab84661b115e2bdbc8199b, type: 3}
+  intensity: 1
+  iterations: 4
+  threshold: 1
+  softThreshold: 0.5
+  debug: 1
 --- !u!1001 &6944534220568529619
 PrefabInstance:
   m_ObjectHideFlags: 0
