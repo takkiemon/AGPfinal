@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 713710489}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.091429256, g: 0.12140501, b: 0.137552, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -121,6 +121,100 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &181554058
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6944534219751383136, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_Name
+      value: Main Camera_old
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383136, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383141, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383141, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383141, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383141, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383141, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383141, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383141, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383141, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383141, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383141, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383141, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383142, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383142, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383142, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.9748287
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944534219751383142, guid: 0b64281317b0bbb4bb46620df4870bcf,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.023584902
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b64281317b0bbb4bb46620df4870bcf, type: 3}
 --- !u!1001 &521084964
 PrefabInstance:
   m_ObjectHideFlags: 0

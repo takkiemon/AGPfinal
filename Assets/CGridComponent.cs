@@ -9,9 +9,12 @@ public class CGridComponent : MonoBehaviour
     private Vector3[] vertices;
     private Mesh mesh;
 
+    public SceneManager sceneManager;
+
     private void Awake()
     {
         Generate();
+        //sceneManager.mesh = mesh;
     }
 
     private void Generate()
