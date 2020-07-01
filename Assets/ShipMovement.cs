@@ -25,13 +25,27 @@ public class ShipMovement : MonoBehaviour
         {
             gameObject.transform.Translate(Vector3.back * Time.deltaTime * shipSpeed);
         }
-        if (Input.GetKey(KeyCode.A)) // turn left
+        if (Input.GetKey(KeyCode.A))
         {
-            gameObject.transform.Rotate(Vector3.down * Time.deltaTime * shipSpeed);
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                gameObject.transform.Translate(Vector3.left * Time.deltaTime * shipSpeed);
+            }
+            else
+            {
+                gameObject.transform.Rotate(Vector3.down * Time.deltaTime * shipSpeed); // turn left
+            }
         }
-        if (Input.GetKey(KeyCode.D)) // turn right
+        if (Input.GetKey(KeyCode.D))
         {
-            gameObject.transform.Rotate(Vector3.up * Time.deltaTime * shipSpeed);
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                gameObject.transform.Translate(Vector3.right * Time.deltaTime * shipSpeed);
+            }
+            else
+            {
+                gameObject.transform.Rotate(Vector3.up * Time.deltaTime * shipSpeed); // turn right
+            }
         }
         if (Input.GetKey(KeyCode.E)) // up
         {

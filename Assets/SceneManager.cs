@@ -50,7 +50,7 @@ public class SceneManager : MonoBehaviour
         tempPosition2 = new Vector3(0, 0, 0);
         planet.transform.localScale = new Vector3(planetSize, planetSize, planetSize);
         planet.transform.rotation = Quaternion.Euler(planetTilt);
-        spaceShip.transform.position = new Vector3(0, 0, -(maxBeltDistance + 40f));
+        spaceShip.transform.position = new Vector3(-(maxBeltDistance + 40f), maxBeltDistance * .333f, maxBeltDistance * .333f);
         InitAsteroids();
         initMatrixArrayList();
     }
