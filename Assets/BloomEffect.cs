@@ -54,12 +54,12 @@ public class BloomEffect : MonoBehaviour
             textures[i] = null;
             Graphics.Blit(currentSource, currentDestination, bloom, BoxDownPass);
             bloom.SetTexture("_SourceTex", source);
-            Graphics.Blit(currentSource, destination, bloom, ApplyBloomPass);
-            RenderTexture.ReleaseTemporary(currentSource);
+            Graphics.Blit(currentSource, currentDestination, bloom, BoxUpPass);
             currentSource = currentDestination;
         }
 
-        Graphics.Blit(currentSource, destination, bloom, BoxUpPass);
+        Graphics.Blit(currentSource, destination, bloom, ApplyBloomPass);
+        RenderTexture.ReleaseTemporary(currentSource);
         RenderTexture.ReleaseTemporary(currentSource);
     }
 

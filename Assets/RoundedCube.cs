@@ -13,6 +13,7 @@ public class RoundedCube : MonoBehaviour
     private Mesh mesh;
     private Vector3[] vertices;
     private Vector3[] normals;
+    private Color32[] cubeUV;
 
     // Start is called before the first frame update
     void Awake()
@@ -20,6 +21,11 @@ public class RoundedCube : MonoBehaviour
     }
 
     private void Start()
+    {
+        SetSceneMesh();
+    }
+
+    public void SetSceneMesh()
     {
         Generate();
         sceneManager.mesh = mesh;
@@ -33,7 +39,22 @@ public class RoundedCube : MonoBehaviour
         CreateTriangles();
     }
 
-    private Color32[] cubeUV;
+    public void IncreaseRoundness(int increment)
+    {
+        if (roundness + increment >= 0)
+        {
+            roundness += increment;
+        }
+        SetSceneMesh();
+    }
+
+    public void IncreaseDimensions(int x, int y, int z)
+    {
+        xSize += x;
+        ySize += y;
+        zSize += z;
+        SetSceneMesh();
+    }
 
     private void CreateVertices()
     {
