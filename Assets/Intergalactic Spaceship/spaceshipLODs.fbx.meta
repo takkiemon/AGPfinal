@@ -1,0 +1,304 @@
+fileFormatVersion: 2
+guid: 63950205c7fbe5e44b7d89f6dd4cae64
+ModelImporter:
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      74: 650932330493396899
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio
+  - first:
+      74: -5969231208816643557
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio.001
+  - first:
+      74: -518701103308521713
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio.002
+  - first:
+      74: 7468304397998392562
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio.003
+  - first:
+      74: 8743862571653261929
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|CircleAction.00
+  - first:
+      74: 6223672072297049368
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|RetopoGroup2Act
+  - first:
+      74: 2720024539503109254
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|SphereActio
+  - first:
+      74: -6798308036607617478
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|SphereAction.00
+  - first:
+      74: 1848870503912762905
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|SphereAction|In
+  - first:
+      74: 5258232055389019298
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac
+  - first:
+      74: 3230342541262734496
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.001
+  - first:
+      74: -1350695036919922064
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.002
+  - first:
+      74: 7380938396527084012
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.003
+  - first:
+      74: 5136654670596098825
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.004
+  - first:
+      74: -7998715151014824531
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.005
+  - first:
+      74: -2535841121774289822
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.006
+  - first:
+      74: -6725949407850362615
+    second: spaceShip_LOD0|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Action
+  - first:
+      74: 4526855859290913381
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio
+  - first:
+      74: 1095622359240905619
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio.001
+  - first:
+      74: 6911431532046457519
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio.002
+  - first:
+      74: -1360038232267448168
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio.003
+  - first:
+      74: -5292111043292273135
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|CircleAction.00
+  - first:
+      74: -6347587858000986892
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|RetopoGroup2Act
+  - first:
+      74: -6747199757964431329
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|SphereActio
+  - first:
+      74: 3214471678381586962
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|SphereAction.00
+  - first:
+      74: 8827036671278843428
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|SphereAction|In
+  - first:
+      74: -3832683320713833768
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac
+  - first:
+      74: -2544342738389284785
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.001
+  - first:
+      74: 4939368591916177752
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.002
+  - first:
+      74: -1537311786664549101
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.003
+  - first:
+      74: -2970420595356916778
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.004
+  - first:
+      74: -7477279744978843215
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.005
+  - first:
+      74: -539729226098740516
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.006
+  - first:
+      74: -4188563248133111255
+    second: spaceShip_LOD1|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Action
+  - first:
+      74: -6294951376426799345
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio
+  - first:
+      74: 7045327153357095434
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio.001
+  - first:
+      74: -4886872272778336579
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio.002
+  - first:
+      74: 5585005827808383132
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio.003
+  - first:
+      74: 2163721892858709613
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|CircleAction.00
+  - first:
+      74: -8523279257459378161
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|RetopoGroup2Act
+  - first:
+      74: -8261913421442011649
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|SphereActio
+  - first:
+      74: -1811187695699278330
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|SphereAction.00
+  - first:
+      74: 3998376794437606550
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|SphereAction|In
+  - first:
+      74: -1726867168776177222
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac
+  - first:
+      74: 6012712253299312174
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.001
+  - first:
+      74: -9016891544137642933
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.002
+  - first:
+      74: 2103763788863567680
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.003
+  - first:
+      74: -1509245989252287426
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.004
+  - first:
+      74: -9043726965582828080
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.005
+  - first:
+      74: 8110093504256316862
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.006
+  - first:
+      74: -3874487075390033416
+    second: spaceShip_LOD2|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Action
+  - first:
+      74: -6912121708946355759
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio
+  - first:
+      74: -8512501023595262690
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio.001
+  - first:
+      74: -2934346321717377254
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio.002
+  - first:
+      74: -7540140488012560245
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|CircleActio.003
+  - first:
+      74: -7760934407526152345
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|CircleAction.00
+  - first:
+      74: 110672606718638460
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|RetopoGroup2Act
+  - first:
+      74: -8248669305642702873
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|SphereActio
+  - first:
+      74: 4053463674303096770
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|SphereAction.00
+  - first:
+      74: 8631456317736768044
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|SphereAction|In
+  - first:
+      74: 4951124867546649422
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac
+  - first:
+      74: 3738932543827718517
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.001
+  - first:
+      74: -6265566162018598627
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.002
+  - first:
+      74: 7036118853285075208
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.003
+  - first:
+      74: 7454926129603961217
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.004
+  - first:
+      74: 532662211033699732
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.005
+  - first:
+      74: -364284505296933420
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Ac.006
+  - first:
+      74: 5757079653475843869
+    second: spaceShip_LOD3|Intergalactic Spaceship|Intergalactic Spaceship|Torus.004Action
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.0625
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
