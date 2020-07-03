@@ -5,9 +5,6 @@
         _Color ("Color", Color) = (1,1,1,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _ColorStrength ("Color Strength", Range(1,4)) = 1
-        _EmissionColor ("Color", Color) = (1,1,1,1)
-        _EmissionMainTex ("Albedo (RGB)", 2D) = "white" {}
-        _EmissionStrength ("Color Strength", Range(1,4)) = 1
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
         _Position ("World Position", Vector) = (0,0,0,0)
@@ -26,19 +23,18 @@
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
 
-        sampler2D _MainTex, _EmissionMainTex;
+        sampler2D _MainTex;
 
         struct Input
         {
             float2 uv_MainTex;
-            float2 uv_EmissionTex;
             float3 worldPos;
         };
 
         half _Glossiness;
         half _Metallic;
-        fixed4 _Color, _EmissionColor;
-        half _ColorStrength, _EmissionStrength;
+        fixed4 _Color;
+        half _ColorStrength;
 
         // SPherical Mask
         float4 _Position;
@@ -59,18 +55,14 @@
             // Grayscale
             half grayscale = (c.r + c.g + c.b) * 0.333;
             fixed3 c_g = fixed3(grayscale,grayscale,grayscale);
-            // Emission
-            fixed4 e = tex2D(_EmissionMainTex, IN.uv_EmissionTex) * _EmissionColor * _EmissionStrength;
 
             half d = distance(_Position,IN.worldPos);
             half sum = saturate((d - _Radius) / -_Softness);
             fixed4 lerpColor = lerp(fixed4(c_g,1),c * _ColorStrength,sum);
-            fixed4 lerpEmission = lerp(fixed4(0,0,0,0), e, sum);
 
             o.Albedo = lerpColor.rgb;
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
-            o.Emission = lerpEmission.rgb;
             o.Smoothness = _Glossiness;
             o.Alpha = c.a;
         }
