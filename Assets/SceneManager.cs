@@ -33,6 +33,7 @@ public class SceneManager : MonoBehaviour
     public Vector3 tempAngle;
     public float minRotSpd, maxRotSpd;
     public float tempFloat;
+    public GameObject randomSphere;
 
     [System.Serializable]
     public struct AsteroidCube
@@ -61,6 +62,7 @@ public class SceneManager : MonoBehaviour
         UpdateMatrixArrayList();
         UpdateAsteroids();
         DrawAllAsteroids();
+        UpdateSphericalMask();
     }
 
     void initMatrixArrayList()
@@ -151,5 +153,15 @@ public class SceneManager : MonoBehaviour
     public Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles)
     {
         return Quaternion.Euler(angles) * (point - pivot) + pivot;
+    }
+
+    public void UpdateSphericalMask()
+    {
+        Shader.SetGlobalFloat("SphericalMask_Radius", 20f);
+        Shader.SetGlobalFloat("SphericalMask_Softness", 0f);
+        tempPosition = (spaceShip.transform.position - planet.transform.position).normalized * planetSize * .5f;
+        Shader.SetGlobalVector("SphericalMask_Position", tempPosition);
+        Debug.Log(tempPosition);
+        randomSphere.transform.position = tempPosition;
     }
 }

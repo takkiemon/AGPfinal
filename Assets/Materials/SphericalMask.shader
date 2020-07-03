@@ -7,9 +7,9 @@
         _ColorStrength ("Color Strength", Range(1,4)) = 1
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
-        _Position ("World Position", Vector) = (0,0,0,0)
-        _Radius ("Sphere Radius", Range(0, 100)) = 0
-        _Softness ("Sphere Softness", Range(0, 100)) = 0
+        //_Position ("World Position", Vector) = (0,0,0,0)
+        //_Radius ("Sphere Radius", Range(0, 100)) = 0
+        //_Softness ("Sphere Softness", Range(0, 100)) = 0
     }
     SubShader
     {
@@ -37,9 +37,9 @@
         half _ColorStrength;
 
         // SPherical Mask
-        float4 _Position;
-        half _Radius;
-        half _Softness;
+        uniform float4 SphericalMask_Position;
+        uniform half SphericalMask_Radius;
+        uniform half SphericalMask_Softness;
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
@@ -56,8 +56,8 @@
             half grayscale = (c.r + c.g + c.b) * 0.333;
             fixed3 c_g = fixed3(grayscale,grayscale,grayscale);
 
-            half d = distance(_Position,IN.worldPos);
-            half sum = saturate((d - _Radius) / -_Softness);
+            half d = distance(SphericalMask_Position,IN.worldPos);
+            half sum = saturate((d - SphericalMask_Radius) / -SphericalMask_Softness);
             fixed4 lerpColor = lerp(fixed4(c_g,1),c * _ColorStrength,sum);
 
             o.Albedo = lerpColor.rgb;
