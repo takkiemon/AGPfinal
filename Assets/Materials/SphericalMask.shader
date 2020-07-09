@@ -58,7 +58,8 @@
 
             half d = distance(SphericalMask_Position,IN.worldPos);
             half sum = saturate((d - SphericalMask_Radius) / -SphericalMask_Softness);
-            fixed4 lerpColor = lerp(fixed4(c_g,1),c * _ColorStrength,sum);
+            fixed4 lerpColor = lerp(fixed4(c_g,1),c * _ColorStrength,sum); // grey planet with blue spot
+            //fixed4 lerpColor = lerp(c * _ColorStrength, fixed4(c_g,1),sum); // blue planet with grey spot
 
             o.Albedo = lerpColor.rgb;
             // Metallic and smoothness come from slider variables

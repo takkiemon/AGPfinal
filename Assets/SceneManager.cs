@@ -158,10 +158,9 @@ public class SceneManager : MonoBehaviour
     public void UpdateSphericalMask()
     {
         Shader.SetGlobalFloat("SphericalMask_Radius", 50f);
-        Shader.SetGlobalFloat("SphericalMask_Softness", 0f);
+        Shader.SetGlobalFloat("SphericalMask_Softness", 40f);
         tempPosition = (spaceShip.transform.position - planet.transform.position).normalized * planetSize * .5f;
         Shader.SetGlobalVector("SphericalMask_Position", tempPosition);
         Debug.Log(tempPosition);
-        randomSphere.transform.position = tempPosition;
     }
 }
